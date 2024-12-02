@@ -1,0 +1,160 @@
+.recipe-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  position: relative;
+  height: 400px;
+  cursor: pointer;
+}
+
+.recipe-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-basic {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  overflow: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.recipe-meta {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  margin: 0.5rem 0;
+}
+
+.recipe-stats {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.recipe-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f4b400;
+}
+
+.difficulty {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background: #e3f2fd;
+  color: #2196f3;
+}
+
+/* Hover Effect */
+.recipe-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.98);
+  padding: 1rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.recipe-card:hover .recipe-details {
+  opacity: 1;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
+
+.recipe-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: #e3f2fd;
+  color: #2196f3;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+}
+
+/* Scrollbar Styling */
+.recipe-details::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recipe-details::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.recipe-details::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.recipe-details ul, 
+.recipe-details ol {
+  padding-left: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.recipe-details li {
+  margin: 0.25rem 0;
+}
+
+.recipe-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.info-pill {
+  padding: 0.15rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 0.5rem);
+  display: inline-block;
+}
+
+.info-pill {
+    background: #f5f5f5;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.875rem;
+    color: #666;
+    margin: 2%;
+  }
+  
+  .cuisine {
+    background: #e3f2fd;
+    color: #2196f3;
+  }
+  
+  .meal-type {
+    background: #f3e5f5;
+    color: #9c27b0;
+  }
+  
+  .calories {
+    background: #e8f5e9;
+    color: #4caf50;
+  }

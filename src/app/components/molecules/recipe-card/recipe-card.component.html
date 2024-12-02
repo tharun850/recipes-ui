@@ -1,0 +1,47 @@
+<div class="recipe-card">
+  <!-- Basic Info (Always Visible) -->
+  <div class="recipe-basic">
+    <img [src]="recipe.image || 'assets/placeholder-recipe.jpg'" 
+         [alt]="recipe.name"
+         class="recipe-image">
+    <h3>{{recipe.name}}</h3>
+    <div class="recipe-meta">
+      <span><i class="fas fa-clock"></i> Cook: {{recipe.cookTimeMinutes}}m</span>
+      <span><i class="fas fa-hourglass"></i> Prep: {{recipe.prepTimeMinutes}}m</span>
+    </div>
+    <div class="recipe-stats">
+      <span class="difficulty">{{recipe.difficulty}}</span>
+      <span class="servings">Serves: {{recipe.servings}}</span>
+    </div>
+    <div class="recipe-rating">
+      <span>★ {{recipe.rating}}</span>
+      <span>({{recipe.reviewCount}} reviews)</span>
+    </div>
+    <div class="recipe-info">
+      <span class="info-pill cuisine">{{ recipe.cuisine }}</span>
+      <span class="info-pill meal-type">{{ recipe.mealType.join(', ') }}</span>
+      <span class="info-pill calories">{{ recipe.caloriesPerServing }} cal/serve</span>
+    </div>
+  </div>
+
+  <!-- Hover Content -->
+  <div class="recipe-details">
+    <h4>Ingredients:</h4>
+    <ul>
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient}}
+      </li>
+    </ul>
+    <h4>Instructions:</h4>
+    <ol>
+      <li *ngFor="let instruction of recipe.instructions">
+        {{instruction}}
+      </li>
+    </ol>
+    <div class="recipe-tags">
+      <span *ngFor="let tag of recipe.tags" class="tag">
+        {{tag}}
+      </span>
+    </div>
+  </div>
+</div>

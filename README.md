@@ -1,27 +1,60 @@
-# RecipesUi
+# Recipes UI
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+## Description
+This project is a single-page application (SPA) built with Angular. It allows users to perform a free text search of recipes from a backend API and display the results on the web UI. The application supports client-side sorting and filtering of recipes.
 
-## Development server
+## Features
+- **Global Search Bar**: A search bar on the homepage allows users to search for recipes by name or cuisine. The search is triggered when the user enters at least 3 characters and presses Enter or clicks the search icon.
+- **Recipe Grid**: Displays recipes in a grid format, showing key attributes such as name, cook time, prep time, difficulty, servings, rating, and more.
+- **Client-side Sorting**: Users can sort the grid results based on total time (prep time + cook time) in ascending or descending order.
+- **Client-side Filtering**: Users can filter the grid results based on tags.
+- **Responsive Design**: The UI is responsive and adapts to different screen sizes.
+- **Lazy Loading**: Implements lazy loading techniques to improve performance.
+- **Environment Configuration**: Supports different environments (local, dev, prod) with environment-specific configurations.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Clean Code Practices
+- **Atomic Design**: Components are organized following atomic design principles.
+- **Exception Handling**: Proper error handling is implemented for API calls.
+- **Environment Layering**: Environment-specific configurations are externalized.
+- **Unit Test Cases & Code Coverage**: Comprehensive unit tests are provided with high code coverage.
+- **README.md**: Detailed instructions to build and run the project.
 
-## Code scaffolding
+## Project Structure
+src/ |-- app/ | |-- components/ | | |-- atoms/ | | | |-- search-bar/ | | | | |-- search-bar.component.ts | | | | |-- search-bar.component.html | | |-- molecules/ | | | |-- recipe-card/ | | | | |-- recipe-card.component.ts | | | | |-- recipe-card.component.html | | |-- organisms/ | | | |-- recipe-grid/ | | | | |-- recipe-grid.component.ts | | | | |-- recipe-grid.component.html | |-- pages/ | | |-- home/ | | | |-- home.component.ts | | | |-- home.component.html | |-- services/ | | |-- api.service.ts | |-- app.config.ts | |-- app.routes.ts |-- environments/ | |-- environment.ts | |-- environment.dev.ts | |-- environment.prod.ts |-- assets/ | |-- sample.json |-- styles.css |-- index.html
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Setup Instructions
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd recipes-ui
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+2. Install dependencies:
+npm install
 
-## Running unit tests
+3. Run the application:
+   For local development
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ng serve
 
-## Running end-to-end tests
+For production build:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+ng build --configuration=production
 
-## Further help
+4. Run unit tests:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+ng test
+
+Environment Configuration
+Local: src/environments/environment.ts
+Dev: src/environments/environment.dev.ts
+Prod: src/environments/environment.prod.ts
+
+API Endpoints
+Get All Recipes: GET /assets/sample.json
+Search Recipes: GET /assets/sample.json?search=<searchText>
+
+Dependencies
+Angular
+RxJS
+Jasmine/Karma (for testing)
