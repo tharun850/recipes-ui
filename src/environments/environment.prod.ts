@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080',
+  apiUrl: 'https://recepies-tksx.onrender.com',
   baseUrl: 'api/recipes',
   fetchAllUrl: 'all',
   fetchSearchQueryUrl: 'search'

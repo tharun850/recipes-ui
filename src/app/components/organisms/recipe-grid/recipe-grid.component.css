@@ -6,11 +6,14 @@
 }
 
 .sort-controls {
+  position: absolute;
   top: 1rem;
-  left: 1rem;
+  right: 1rem;
+  z-index: 10; /* Ensure the button is above other elements */
 }
 
-.sort-controls button {
+.sort-toggle {
+  margin-top: 3vw;
   padding: 0.75rem 1.5rem;
   background-color: #2196f3;
   color: white;
@@ -20,7 +23,7 @@
   transition: background-color 0.3s ease;
 }
 
-.sort-controls button:hover {
+.sort-toggle:hover {
   background-color: #1976d2;
 }
 
@@ -40,22 +43,4 @@
   .recipe-grid {
     grid-template-columns: 1fr;
   }
-  
-  .sort-controls {
-    flex-direction: column;
-  }
-}
-
-.sort-toggle {
-  padding: 0.5rem 1rem;
-  background-color: #2196f3;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sort-toggle:hover {
-  background-color: #1976d2;
 }

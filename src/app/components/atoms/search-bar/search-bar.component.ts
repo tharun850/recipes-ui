@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
   styleUrls: ['./search-bar.component.css'],
-  imports: [ FormsModule],
-  standalone: true
+  standalone: true,
+  imports: [CommonModule, FormsModule]
 })
 export class SearchBarComponent {
   searchText: string = '';

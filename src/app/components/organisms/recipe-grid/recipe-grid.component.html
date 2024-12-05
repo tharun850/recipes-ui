@@ -1,10 +1,9 @@
+<div class="sort-controls">
+  <button class="sort-toggle" (click)="toggleSort()">
+    Sort by Cooking Time {{ sortOrder === 'asc' ? '↑' : '↓' }}
+  </button>
+</div>
 <div class="container">
-  <div class="sort-controls">
-    <button class="sort-toggle" (click)="toggleSort()">
-      Sort by Cooking Time {{ sortOrder === 'asc' ? '↑' : '↓' }}
-    </button>
-  </div>
-  
   <div class="recipe-grid">
     <app-recipe-card 
       *ngFor="let recipe of recipes"

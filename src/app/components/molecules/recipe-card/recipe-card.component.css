@@ -9,6 +9,11 @@
   cursor: pointer;
 }
 
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+}
+
 .recipe-image {
   width: 100%;
   height: 200px;
@@ -52,7 +57,6 @@
   color: #2196f3;
 }
 
-/* Hover Effect */
 .recipe-details {
   position: absolute;
   top: 0;
@@ -70,13 +74,8 @@
 
 .recipe-card:hover .recipe-details {
   opacity: 1;
+  visibility: visible;
 }
-
-.recipe-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 12px rgba(0,0,0,0.15);
-}
-
 
 .recipe-tags {
   display: flex;
@@ -91,6 +90,30 @@
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
   font-size: 0.875rem;
+}
+
+.info-pill {
+  background: #f5f5f5;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.875rem;
+  color: #666;
+  margin: 2%;
+}
+
+.cuisine {
+  background: #e3f2fd;
+  color: #2196f3;
+}
+
+.meal-type {
+  background: #f3e5f5;
+  color: #9c27b0;
+}
+
+.calories {
+  background: #e8f5e9;
+  color: #4caf50;
 }
 
 /* Scrollbar Styling */
@@ -123,38 +146,3 @@
   gap: 0.25rem;
   margin-top: 0.25rem;
 }
-
-.info-pill {
-  padding: 0.15rem 0.5rem;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: calc(100% - 0.5rem);
-  display: inline-block;
-}
-
-.info-pill {
-    background: #f5f5f5;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.875rem;
-    color: #666;
-    margin: 2%;
-  }
-  
-  .cuisine {
-    background: #e3f2fd;
-    color: #2196f3;
-  }
-  
-  .meal-type {
-    background: #f3e5f5;
-    color: #9c27b0;
-  }
-  
-  .calories {
-    background: #e8f5e9;
-    color: #4caf50;
-  }

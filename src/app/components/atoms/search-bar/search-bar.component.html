@@ -1,5 +1,4 @@
-
 <div class="search-bar">
-  <input [(ngModel)]="searchText" (keyup.enter)="onSearch()" placeholder="Search recipes...">
-  <button (click)="onSearch()">Search</button>
+  <input [(ngModel)]="searchText" (keyup.enter)="onSearch()" placeholder="Search recipes..." minlength="3">
+  <button (click)="onSearch()" [disabled]="searchText.length < 3">Search</button>
 </div>
