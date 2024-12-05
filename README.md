@@ -19,42 +19,92 @@ This project is a single-page application (SPA) built with Angular. It allows us
 - **Unit Test Cases & Code Coverage**: Comprehensive unit tests are provided with high code coverage.
 - **README.md**: Detailed instructions to build and run the project.
 
-## Project Structure
-src/ |-- app/ | |-- components/ | | |-- atoms/ | | | |-- search-bar/ | | | | |-- search-bar.component.ts | | | | |-- search-bar.component.html | | |-- molecules/ | | | |-- recipe-card/ | | | | |-- recipe-card.component.ts | | | | |-- recipe-card.component.html | | |-- organisms/ | | | |-- recipe-grid/ | | | | |-- recipe-grid.component.ts | | | | |-- recipe-grid.component.html | |-- pages/ | | |-- home/ | | | |-- home.component.ts | | | |-- home.component.html | |-- services/ | | |-- api.service.ts | |-- app.config.ts | |-- app.routes.ts |-- environments/ | |-- environment.ts | |-- environment.dev.ts | |-- environment.prod.ts |-- assets/ | |-- sample.json |-- styles.css |-- index.html
-
-
 ## Setup Instructions
+
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
    cd recipes-ui
 
-2. Install dependencies:
-npm install
+2. **Install dependencies**:
+   npm install
 
-3. Run the application:
-   For local development
+3. **Run the application: For local development**:
+   ng serve
 
-ng serve
+   **For production build**:
+   ng build --configuration=production
 
-For production build:
+4. **Run unit tests**:
+   ng test
 
-ng build --configuration=production
+## Environment Configuration
+   - **Local**: src/environments/environment.ts
+   - **Dev**: src/environments/environment.dev.ts
+   - **Prod**: src/environments/environment.prod.ts
 
-4. Run unit tests:
+## API Endpoints
+   - **Get All Recipes**: GET /assets/sample.json
+   - **Search Recipes**: GET /assets/sample.json?search=<searchText>
 
-ng test
+## Dependencies
+- Angular
+- RxJS
+- Jasmine/Karma (for testing)
 
-Environment Configuration
-Local: src/environments/environment.ts
-Dev: src/environments/environment.dev.ts
-Prod: src/environments/environment.prod.ts
-
-API Endpoints
-Get All Recipes: GET /assets/sample.json
-Search Recipes: GET /assets/sample.json?search=<searchText>
-
-Dependencies
-Angular
-RxJS
-Jasmine/Karma (for testing)
+## Project Structure
+recipes-ui/
+├── .angular/
+├── .vscode/
+├── src/
+│   ├── app/
+│   │   ├── components/
+│   │   │   ├── atoms/
+│   │   │   │   ├── search-bar/
+│   │   │   │   │   ├── search-bar.component.ts
+│   │   │   │   │   ├── search-bar.component.html
+│   │   │   │   │   ├── search-bar.component.css
+│   │   │   │   ├── loading-page/
+│   │   │   │   │   ├── loading-page.component.ts
+│   │   │   │   │   ├── loading-page.component.html
+│   │   │   │   │   ├── loading-page.component.css
+│   │   │   │   ├── error-page/
+│   │   │   │   │   ├── error-page.component.ts
+│   │   │   │   │   ├── error-page.component.html
+│   │   │   │   │   ├── error-page.component.css
+│   │   │   ├── molecules/
+│   │   │   │   ├── recipe-card/
+│   │   │   │   │   ├── recipe-card.component.ts
+│   │   │   │   │   ├── recipe-card.component.html
+│   │   │   │   │   ├── recipe-card.component.css
+│   │   │   ├── organisms/
+│   │   │   │   ├── recipe-grid/
+│   │   │   │   │   ├── recipe-grid.component.ts
+│   │   │   │   │   ├── recipe-grid.component.html
+│   │   │   │   │   ├── recipe-grid.component.css
+│   │   ├── pages/
+│   │   │   ├── home/
+│   │   │   │   ├── home.component.ts
+│   │   │   │   ├── home.component.html
+│   │   │   │   ├── home.component.css
+│   │   ├── services/
+│   │   │   ├── api.service.ts
+│   │   ├── app.config.ts
+│   │   ├── app.routes.ts
+│   ├── assets/
+│   │   ├── sample.json
+│   ├── environments/
+│   │   ├── environment.ts
+│   │   ├── environment.dev.ts
+│   │   ├── environment.prod.ts
+│   ├── index.html
+│   ├── main.ts
+│   ├── styles.css
+│   ├── test.ts
+├── angular.json
+├── karma.conf.js
+├── package.json
+├── README.md
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.spec.json
